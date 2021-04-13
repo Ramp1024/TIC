@@ -15,6 +15,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from 'react-router-dom';
 import axios from "../axios";
 import InfoIcon from '@material-ui/icons/Info';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 function Home() {
 
@@ -474,8 +475,15 @@ function Home() {
                             {
                                 finished ? (
                                     <div>
-                                        <h6 className="card-title">Past Event</h6>
-                                        <h3>{finished[0].event_name}</h3>
+                                        <div className="card-topFlex">
+                                            <div>
+                                                <h6 className="card-title">Past Event</h6>
+                                                <h3>{finished[0].event_name}</h3>
+                                            </div>
+                                            <div className="card-arrow">
+                                                <Link to={`/events/${finished[0]._id}`} target="_blank" rel="noopener noreferrer" ><ArrowForwardIcon /></Link>
+                                            </div>
+                                        </div>
                                         {/* <div>
                                             <p>{finished[0].event_desc}</p>
                                         </div> */}
@@ -546,8 +554,16 @@ function Home() {
                             {
                                 nextHolder?.length === 2 ? (
                                     <div>
-                                        <h6 className="card-title">Upcoming Event</h6>
-                                        <h3>{nextHolder[1].event_name}</h3>
+                                        <div className="card-topFlex">
+                                            <div>
+                                                <h6 className="card-title">Upcoming Event</h6>
+                                                <h3>{nextHolder[1].event_name}</h3>
+                                            </div>
+                                            <div className="card-arrow">
+                                                <a href={nextHolder[1].form} target="_blank" rel="noopener noreferrer"><ArrowForwardIcon /></a>
+                                            </div>
+                                        </div>
+
                                         {/* <div>
                                             <p>{nextHolder[1].event_desc}</p>
                                         </div> */}
@@ -575,13 +591,21 @@ function Home() {
                                 ) : (
                                     finished ? (
                                         <div>
-                                            <h6 className="card-title">Past Event</h6>
-                                            <h3>{finished[1]?.event_name}</h3>
+                                            <div className="card-topFlex">
+                                                <div>
+                                                    <h6 className="card-title">Past Event</h6>
+                                                    <h3>{finished[1]?.event_name}</h3>
+                                                </div>
+                                                <div className="card-arrow">
+                                                    <Link to={`/events/${finished[1]._id}`} target="_blank" rel="noopener noreferrer"><ArrowForwardIcon /></Link>
+                                                </div>
+                                            </div>
+
                                             {/* <div>
                                                 <p>{finished[1].event_desc}</p>
                                             </div> */}
                                             <div className="card-flex">
-                                                <div style={{ "marginTop": "10%" }} className="card-singleContent">
+                                                <div className="card-singleContent">
                                                     <small>Sponsors:</small>
                                                     <p>{finished[1].event_sponsors}</p>
                                                     {/* <small>Dates:</small>

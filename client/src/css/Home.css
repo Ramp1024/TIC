@@ -527,9 +527,11 @@
   width: 100%;
   height: 40%;
   display: flex;
+  margin-top: 10%;
 }
 
 .card-flex > div:nth-child(1) {
+  /* margin-top: 35px; */
   flex: 60%;
   height: 100%;
   display: flex;
@@ -547,8 +549,12 @@
 }
 
 .card-flex:nth-child(3){
-  height: 60%;
+  height: 50%;
   margin-top: 35px;
+}
+
+.card-flex:nth-child(2){
+  height: 50%;
 }
 
 .flex-image {
@@ -558,6 +564,10 @@
 
 .flex-image > img{
   border-radius: 5px;
+}
+
+.card-arrow{
+  display: none;
 }
 
 .card-singleContent ~ a {
@@ -1234,13 +1244,26 @@ a {
         /* transform: translateY(-50%); */
     }
 
+    .second-startingContent{
+      margin-top: 30%;
+    }
+
+    .second-who{
+      font-size: 1.8rem;
+    }
+
+    /* .second-whoContent{
+      margin: 5% 5% 2% 5%;
+    } */
+
   .second-whoContent {
     font-size: 1.1em;
   }
 
   .placeholder-forImage {
-    top: 5%;
+    top: 0%;
     height: 90vh;
+    /* width: 150% !important; */
   }
 
   .placeholder-forImage > img {
@@ -1299,11 +1322,11 @@ a {
     display: none;
   }
 
-  .home-card:nth-child(3) > div > p , .home-card:nth-child(1) > div > p{
+  .home-card:nth-child(3)  div  p , .home-card:nth-child(1)  div  p{
     display: none;
   }
 
-  .home-card:nth-child(1) > div > h3 , .home-card:nth-child(3) > div > h3{
+  .home-card:nth-child(1)  div  h3 , .home-card:nth-child(3)  div  h3{
     font-size: 1rem;
   }
 
@@ -1338,6 +1361,24 @@ a {
     /* transition: 0.4s ease-out; */
   }
 
+  .card-arrow{
+    display: block;
+    cursor: pointer;
+  }
+
+  .card-arrow > a{
+    color:black !important;
+    text-decoration: none;
+    outline: none;
+    font-size: 1rem;
+  }
+
+  .card-topFlex{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
   .home-card:hover ~ .home-card {
     position: relative;
     left: 0px;
@@ -1351,6 +1392,10 @@ a {
   .marquee-scroll > .marquee-place {
     width: 400%;
     animation-duration: 20s;
+  }
+
+  .what-weDo{
+    padding-left: 0% !important;
   }
 
   .what-weDo > h1 {
